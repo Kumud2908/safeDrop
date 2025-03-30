@@ -18,7 +18,6 @@ import (
 )
 
 func main() {
-
 	router := gin.Default()
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -103,11 +102,10 @@ func main() {
 			"key":      cipherKey,
 		})
 		log.Println("Starting SafeDrop server on port:", port)
-
 	})
 
-	// 🔹 Download route
+	// 🔹 Download route (you can add this route if required)
 
-	router.Run(":" + port)
-
+	// Start the HTTP server
+	router.Run(":" + port) // Vercel expects to listen on 8080 or a dynamically assigned port from the environment variable
 }
