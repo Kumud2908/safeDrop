@@ -18,7 +18,7 @@ import (
 
 func main() {
 	router := gin.Default()
-	port := "8080" 
+	port := 8080
 
 	// 🔥 Enable CORS
 	// Disable CORS restrictions (Allow all origins)
@@ -103,5 +103,5 @@ func main() {
 	// 🔹 Download route (you can add this route if required)
 
 	// Start the HTTP server
-	router.Run(":" + port) // Vercel expects to listen on 8080 or a dynamically assigned port from the environment variable
+	router.Run(":3000") // Vercel expects to listen on 8080 or a dynamically assigned port from the environment variable
 }
