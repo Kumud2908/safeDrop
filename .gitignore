@@ -1,0 +1,9 @@
+# Frontend node_modules
+front-end/node_modules/
+
+# Backend node_modules
+backend/node_modules/
+
+# Environment files
+.env
+
