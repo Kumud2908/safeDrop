@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"log"
 	"net/http"
-	"os"
 	aesCipher "safeDrop/AES_cipher"
 	url "safeDrop/URL"
 	saveEncryptedFile "safeDrop/saveEncryptedFile"
@@ -19,10 +18,7 @@ import (
 
 func main() {
 	router := gin.Default()
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "8080" // Default to 8080 for local testing
-	}
+	port := "8080" 
 
 	// 🔥 Enable CORS
 	// Disable CORS restrictions (Allow all origins)
