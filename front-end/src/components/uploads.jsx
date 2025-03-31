@@ -5,7 +5,8 @@ export default function Uploads() {
 //   const [preview, setPreview] = useState(null);
   const [uploading, setUploading] = useState(false);
  const [data,setData]=useState(null);
- const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8080";
+ const API_BASE_URL =  "http://localhost:3000";
+//  import.meta.env.VITE_API_URL ||
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
@@ -30,13 +31,13 @@ export default function Uploads() {
         method: "POST",
         // ❌ Remove "Content-Type", let the browser set it
         body: formData,
-        credentials: "include",
+       
       });
 
       if (response.ok) {
         const jsonData = await response.json(); // ✅ Parse response as JSON
         setData(jsonData)
-        alert(`File uploaded successfully! Download link: ${data.file_url}`);
+        alert(`File uploaded successfully! Download link: ${jsonData.file_url}`);
       } else {
         alert("Upload failed. Please try again.");
       }
@@ -71,8 +72,9 @@ export default function Uploads() {
       {
         data && (
             <div style={{marginTop:"10px"}}>
+                 <p>URL:{data.file_url}</p>
                 <p>Key:{data.key}</p>
-                <p>ID:{data.id}</p>
+               
             </div>
         )
       }
