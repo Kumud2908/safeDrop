@@ -101,11 +101,11 @@ func main() {
 			"id":       identifierID,
 			"key":      cipherKey,
 		})
-		log.Println("Starting SafeDrop server on port:", port)
+		
 	})
 
 	// 🔹 Download route (you can add this route if required)
-
+    log.Println("Starting SafeDrop server on port:", port)
 	// Start the HTTP server
 	if err := router.Run("0.0.0.0:" + port); err != nil {
 		log.Panicf("error: %s", err)
