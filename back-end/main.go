@@ -19,7 +19,7 @@ import (
 
 func main() {
 	router := gin.Default()
-	port := 	os.Getenv("PORT")
+	port := os.Getenv("PORT")
 	if port ==""{
 		port="8080"
 	}
@@ -105,7 +105,7 @@ func main() {
 	})
 
 	// 🔹 Download route (you can add this route if required)
-    addr := ":" + port
+	addr := "0.0.0.0:" + port
 	fmt.Println("🚀 SafeDrop server starting on PORT:", port)
 	srv := &http.Server{
 		Addr:    addr,
