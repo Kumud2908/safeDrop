@@ -107,8 +107,8 @@ func main() {
 	// 🔹 Download route (you can add this route if required)
 
 	// Start the HTTP server
-	if err:=router.Run(":"+port);err!=nil{
-		log.Panicf("error:%s",err)
+	if err := router.Run("0.0.0.0:" + port); err != nil {
+		log.Panicf("error: %s", err)
 	}
 	
 }
