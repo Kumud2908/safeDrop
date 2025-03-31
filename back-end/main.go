@@ -105,10 +105,15 @@ func main() {
 	})
 
 	// 🔹 Download route (you can add this route if required)
-    log.Println("Starting SafeDrop server on port:", port)
-	// Start the HTTP server
-	if err := router.Run("0.0.0.0:" + port); err != nil {
-		log.Panicf("error: %s", err)
+    addr := ":" + port
+	fmt.Println("🚀 SafeDrop server starting on PORT:", port)
+	srv := &http.Server{
+		Addr:    addr,
+		Handler: router,
+	}
+
+	if err := srv.ListenAndServe(); err != nil {
+		log.Fatalf("❌ Server error: %v", err)
 	}
 	
 }
