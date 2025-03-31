@@ -12,8 +12,8 @@ function App() {
   return (
     <>
       <div>
-        <h1>HOME PAGE</h1>
-        <h2>Secure Golang File Sharing System</h2>
+        <h1>Safe Drop</h1>
+        
        <p>A fast, private, and encrypted file-sharing
        solution built with Golang.</p>
        <div>
