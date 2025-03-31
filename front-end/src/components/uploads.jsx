@@ -5,8 +5,7 @@ export default function Uploads() {
 //   const [preview, setPreview] = useState(null);
   const [uploading, setUploading] = useState(false);
  const [data,setData]=useState(null);
- const API_BASE_URL =  "http://localhost:3000";
-//  import.meta.env.VITE_API_URL ||
+ const API_BASE_URL =  import.meta.env.VITE_API_URL
 
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];

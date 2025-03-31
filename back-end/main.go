@@ -33,7 +33,7 @@ func main() {
 
 	// Enable CORS
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "*",
+		AllowOrigins: "http://localhost:5173, https://safe-drop.vercel.app",
 		AllowMethods: "GET,POST,PUT,DELETE,OPTIONS",
 		AllowHeaders: "Content-Type",
 	}))
