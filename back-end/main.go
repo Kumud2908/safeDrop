@@ -15,9 +15,16 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	"github.com/joho/godotenv"
 )
 
 func main() {
+
+	err := godotenv.Load()
+	if err != nil {
+		log.Println("⚠️ Warning: No .env file found, using default values")
+	}
+	
 	router := gin.Default()
 	port := os.Getenv("PORT")
 	if port ==""{
